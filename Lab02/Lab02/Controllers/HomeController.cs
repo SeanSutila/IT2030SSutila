@@ -10,7 +10,7 @@ namespace Lab02.Controllers
     {
         public ActionResult Index()
         {
-            return View("Details");
+            return View("Details")
         }
 
         public ActionResult About()
