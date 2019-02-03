@@ -8,10 +8,7 @@ namespace Lab02.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View("Details");
-        }
+        public ActionResult Index() => View("Details");
 
         public ActionResult About()
         {
