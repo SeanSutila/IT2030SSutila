@@ -10,7 +10,7 @@ namespace Lab02.Controllers
     {
         public ActionResult Index()
         {
-            return View("Details");
+            return View("C:/Users/Sean/Documents/GitHub/IT2030SSutila/Lab02/Lab02/Views/Other/Details.cshtml");
         }
 
         public ActionResult About()
