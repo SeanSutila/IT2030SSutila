@@ -17,7 +17,7 @@ namespace EnrollementApplication.Models
     
         public EnrollementDB() : base("name=EnrollementDB")
         {
-            Database.SetInitializer<EnrollementDB>(new DropCreateDatabaseIfModelChanges<EnrollementDB>());
+            //Database.SetInitializer<EnrollementDB>(new DropCreateDatabaseIfModelChanges<EnrollementDB>());
         }
 
         public System.Data.Entity.DbSet<EnrollementApplication.Models.Enrollment> Enrollments { get; set; }

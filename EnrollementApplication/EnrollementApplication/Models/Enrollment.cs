@@ -26,5 +26,7 @@ namespace EnrollementApplication.Models
         [Required]
         [Range(2018, int.MaxValue, ErrorMessage = "Must be at least 2018")]
         public virtual int EnrollmentYear { get; set; }
+        [InvalidChars(".")]
+        public virtual string Notes { get; set; }
     }
 }
