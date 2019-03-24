@@ -6,6 +6,24 @@
 
 <h2>Index</h2>
 
+<div class="panel panel-default">
+    <div class="panel-heading">Search</div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("StudentSearch", "EnrollmentController", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchfailed",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search" />
+        }
+        <div id="searchresults"></div>
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -20,20 +38,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.LastName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.EnrollmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.LastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentID })
+            </td>
+        </tr>
+    }
 
 </table>
+
+@section Script{
+    <script src="~/Scripts/app/SearchScripts.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}
