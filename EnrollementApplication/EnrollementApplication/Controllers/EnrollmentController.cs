@@ -17,7 +17,7 @@ namespace EnrollementApplication.Controllers
         public ActionResult StudentSearch(string q)
         {
             var student = GetStudent(q);
-            return PartialView("_StudentSearch");
+            return PartialView("_StudentSearch", student);
         }
 
         public List<Student> GetStudent(string searchString)
@@ -28,7 +28,7 @@ namespace EnrollementApplication.Controllers
         public ActionResult CourseSearch(string q)
         {
             var course = GetCourse(q);
-            return PartialView("_CourseSearch");
+            return PartialView("_CourseSearch", course);
         }
 
         public List<Course> GetCourse(string searchString)

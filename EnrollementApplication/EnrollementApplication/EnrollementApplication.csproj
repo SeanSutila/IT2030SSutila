@@ -215,6 +215,7 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Enrollment\_StudentSearch.cshtml" />
     <Content Include="Views\Enrollment\_CourseSearch.cshtml" />
+    <Content Include="Views\Students\_StudentofMonth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

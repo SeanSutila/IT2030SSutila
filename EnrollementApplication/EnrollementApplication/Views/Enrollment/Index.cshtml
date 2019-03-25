@@ -13,12 +13,23 @@
         {
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "GET",
-            OnFailure = "searchfailed",
+            OnFailure = "searchFailed",
             UpdateTargetId = "searchresults"
         }))
         {
             <input type="text" name="q" />
-            <input type="submit" value="search" />
+            <input type="submit" value="search for student" />
+        }
+        @using (Ajax.BeginForm("CourseSearch", "EnrollmentController", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="search for course" />
         }
         <div id="searchresults"></div>
     </div>
@@ -57,7 +68,7 @@
 
 </table>
 
-@section Script{
+@section Scripts {
     <script src="~/Scripts/app/SearchScripts.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 }
